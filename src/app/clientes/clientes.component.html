@@ -18,9 +18,7 @@
           <th>apellido</th>
           <th>email</th>
           <th>fecha</th>
-          <th>
-            editar
-          </th>
+          <th>editar</th>
           <th>eliminar</th>
         </tr>
       </thead>
@@ -40,6 +38,6 @@
         </tr>
       </tbody>
     </table>
-
+    <paginator-nav *ngIf="paginador" [paginador]="paginador"></paginator-nav>
   </div>
 </div>
