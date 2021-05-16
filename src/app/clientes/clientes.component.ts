@@ -47,8 +47,8 @@ export class ClientesComponent implements OnInit {
           clienteOriginal.foto = cliente.foto;
         }
         return clienteOriginal;
-      });
-    });
+      })
+    })
   }
 
   delete(cliente: Cliente): void {
