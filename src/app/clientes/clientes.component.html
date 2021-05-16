@@ -7,7 +7,10 @@
         Crear Cliente
       </button>
     </div>
-    <table class="table table-bordered table-striped">
+    <div *ngIf="clientes?.length == 0" class="alert alert-info">
+      No hay registros en la base de datos!
+    </div>
+    <table class="table table-bordered table-striped" *ngIf="clientes?.length>0">
       <thead>
         <tr>
           <th>id</th>
@@ -25,9 +28,9 @@
         <tr *ngFor="let cliente of clientes">
           <td>{{ cliente.id }}</td>
           <td>{{ cliente.nombre }}</td>
-          <td>{{ cliente.apellido }}</td>
+          <td>{{ cliente.apellido | uppercase }}</td>
           <td>{{ cliente.email }}</td>
-          <td>{{ cliente.createAt }}</td>
+          <td>{{ cliente.createAt | date:"EEEE dd, MMMM yyyy"}}</td>
           <td>
             <button type="button" name="editar" [routerLink]="['/clientes/form', cliente.id]" class="btn btn-primary btn-sm">editar</button>
           </td>
